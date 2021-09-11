@@ -1,22 +1,3 @@
-// const submit = document.getElementById('submit-button')
-// const textBox = document.getElementById('x-textinput')
-//
-// function checkX(node){
-//     let content = node.value
-//     if (content.trim()) {
-//         if (isNaN(content)) {
-//             alert('X должен быть представлен числом!')
-//         }
-//     } else {
-//         alert('поле не может быть пустым!')
-//     }
-// }
-
-// submit.addEventListener('click', (event)=>{
-//     event.preventDefault()
-//     checkX(textBox)
-// })
-
 $(function (){
 
     let numValueX = undefined
@@ -55,7 +36,6 @@ $(function (){
             return false;
         } else {
             $('.y-buttons input').removeClass('button-error')
-            // $('.y-buttons input').removeClass('button-clicked')
             return true;
         }
     }
