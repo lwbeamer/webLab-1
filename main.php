@@ -70,14 +70,20 @@ $isHitString = $isHit ? 'true' : 'false';
 $currentTime = date('H:i:s', time() - $time * 60);
 $execTime = round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 7);
 
-$jsonData = '{' .
-    "\"isValid\":\"$isValidString\"," .
-    "\"x\":\"$xVal\"," .
-    "\"y\":\"$yVal\"," .
-    "\"r\":\"$rVal\"," .
-    "\"currentTime\":\"$currentTime\"," .
-    "\"execTime\":\"$execTime\"," .
-    "\"result\":$isHitString" .
-    "}";
+if (!$isValid){
+    $jsonData = '{' .
+        "\"isValid\":\"$isValidString\"" .
+        "}";
+} else {
+    $jsonData = '{' .
+        "\"isValid\":\"$isValidString\"," .
+        "\"x\":\"$xVal\"," .
+        "\"y\":\"$yVal\"," .
+        "\"r\":\"$rVal\"," .
+        "\"currentTime\":\"$currentTime\"," .
+        "\"execTime\":\"$execTime\"," .
+        "\"result\":$isHitString" .
+        "}";
+}
 
 echo $jsonData;
